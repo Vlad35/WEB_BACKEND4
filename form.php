@@ -22,12 +22,37 @@ if (!empty($messages)) {
 // Далее выводим форму отмечая элементы с ошибками классом error
 // и задавая начальные значения элементов ранее сохраненными.
 ?>
+<style>
+  .Style{
+    margin: 50px;
+    border:3px solid black;
+    width: 300px;
+  }
+</style>
 
-    <form action="index.php" method="POST">`
-      <input name="uName" <?php if ($errors['uName']) {print 'class="error"';} ?> value="<?php print $values['uName']; ?>" />
-      <input name="uMail" <?php if ($errors['uMail']) {print 'class="error"';} ?> value="<?php print $values['uMail']; ?>" />
-      <input name="uDate" <?php if ($errors['uDate']) {print 'class="error"';} ?> value="<?php print $values['uDate']; ?>" />
-      <input name="uBio" <?php if ($errors['uBio']) {print 'class="error"';} ?> value="<?php print $values['uBio']; ?>" />
+    <form action="index.php" method="POST">
+      <div class="Style">
+        <h1>Форма.</h1>
+        <div>
+        <label>Введите Имя:</label>
+        <br>
+        <input name="uName" <?php if ($errors['uName']) {print 'class="error"';} ?> value="<?php print $values['uName']; ?>" /> 
+        </div>
+        <div>
+          <label>Введите E-mail:</label>
+          <br>
+          <input name="uMail" <?php if ($errors['uMail']) {print 'class="error"';} ?> value="<?php print $values['uMail']; ?>" />
+         </div>
+        <div>
+          <label>Введите Дату:</label>
+          <br>
+          <input name="uDate" <?php if ($errors['uDate']) {print 'class="error"';} ?> value="<?php print $values['uDate']; ?>" />
+        <div>
+          <label>Введите Биографию:</label>
+          <br>
+          <input name="uBio" <?php if ($errors['uBio']) {print 'class="error"';} ?> value="<?php print $values['uBio']; ?>" /> 
+        </div>
+      </div>
       <input type="submit" value="ok" />
     </form>
   </body>
