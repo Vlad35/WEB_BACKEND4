@@ -42,8 +42,8 @@
   <div >
   <form action="index.php" method = "POST" >
 	<div> Имя: </div>
-  <label>
-  <input  type="text" name="uName" placeholder="Ваше имя" autocomplete="off">
+  <label <?php  if(!empty($_COOKIE['uName_error'])) {print 'class="error"';}?>>
+  <input  type="text" name="uName" placeholder="Ваше имя" autocomplete="off" 
   </label>
 	<br/>	
 	<div> Email: </div>	
